@@ -104,6 +104,44 @@ html,body{min-height:100%;background:#6515f5}
  .profile-avatar{width:76px;height:76px;flex-basis:76px}
  .profile-copy h1{font-size:17px}
 }
+
+/* Ajuste do visualizador no celular: permite rolar a publicação inteira */
+@media (max-width: 720px) {
+  .viewer {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    align-items: flex-start;
+    display: none;
+  }
+  .viewer.open {
+    display: flex;
+  }
+  .viewer-panel {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible;
+    flex: 0 0 auto;
+  }
+  .viewer-media {
+    flex: 0 0 auto;
+    height: 58vh;
+    height: 58dvh;
+    min-height: 260px;
+    max-height: 560px;
+  }
+  .caption-area {
+    flex: 0 0 auto;
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+  }
+  .viewer-actions {
+    flex: 0 0 auto;
+    padding-bottom: max(11px, env(safe-area-inset-bottom));
+  }
+}
+
 </style>
 </head>
 <body>
